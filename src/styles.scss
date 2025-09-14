@@ -1,9 +1,9 @@
-$primary-color: #373d20;
-$secondary-color: #766153;
-
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap");
 @import "aos/dist/aos.css";
 @import "@fortawesome/fontawesome-free/css/all.css";
-@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap");
+
+$primary-color: #373d20;
+$secondary-color: #766153;
 
 body[data-aos-duration="5000"] [data-aos],
 [data-aos][data-aos][data-aos-duration="5000"] {
