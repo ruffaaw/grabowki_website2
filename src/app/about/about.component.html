@@ -1,0 +1,101 @@
+<div class="container">
+  <h2 class="title">O inwestycji</h2>
+  <div class="row">
+    <div class="item item1" data-aos="fade-right" data-aos-duration="1000">
+      <img src="assets/images/background_image.png" alt="Dzień Grabówki" />
+      <img
+        class="nightMode"
+        [ngClass]="{ active: isNightMode }"
+        src="assets/images/Grabówki1 zachód.png"
+        alt="placeholder"
+      />
+      <button class="image-button" (click)="toggleMode()">
+        <img src="assets/images/dayButton.png" alt="" />
+        <img
+          class="night-button"
+          [ngClass]="{ active: isNightMode }"
+          src="assets/images/nightButton.png"
+          alt=""
+        />
+      </button>
+    </div>
+    <div class="item item2" data-aos="fade-left" data-aos-duration="1000">
+      <div class="text-container">
+        <h2>Grabówki - Twój nowy lepszy adres</h2>
+        <p>
+          Nasze osiedle to miejsce, w którym codzienność staje się prostsza, a
+          powroty do domu zawsze bezpieczne i pełne spokoju.
+        </p>
+        <p>
+          Starannie zaprojektowana przestrzeń łączy w sobie wygodę, prywatność i
+          estetykę, tworząc otoczenie sprzyjające odpoczynkowi i budowaniu
+          sąsiedzkich relacji.
+        </p>
+        <p>
+          Każdy detal został przemyślany z myślą o mieszkańcach – od
+          infrastruktury po małą architekturę, tak aby każdy dzień tutaj był
+          komfortowy i harmonijny.
+        </p>
+        <a href="https://maps.app.goo.gl/TGuG32BveGKRVsKu6" target="_blank">
+          <button class="action-button">
+            Zobacz na mapie
+            <i class="fa-solid fa-location-dot" style="margin-left: 5px"></i>
+          </button>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="item item3" data-aos="fade-right" data-aos-duration="1000">
+      <div class="text-container">
+        <h2>
+          Nowe technologie<br />
+          i&nbsp;ekologiczne rozwiązania
+        </h2>
+        <p>
+          Inwestycja powstała z myślą o tym, aby codzienne życie było wygodne,
+          zdrowe i pełne naturalnego światła.
+        </p>
+        <p>
+          Każde mieszkanie to przestrzeń, która sprzyja odpoczynkowi – zarówno
+          wewnątrz, jak i w otoczeniu zieleni na świeżym powietrzu.
+        </p>
+        <p>
+          Stworzyliśmy miejsce, które pozwala łączyć prywatność domowego azylu z
+          komfortem życia w nowoczesnym osiedlu.
+        </p>
+        <!-- <a href="https://maps.app.goo.gl/TGuG32BveGKRVsKu6" target="_blank">
+          <button class="action-button">
+            Zobacz okolicę
+            <i class="fa-solid fa-location-dot" style="margin-left: 5px"></i>
+          </button>
+        </a> -->
+      </div>
+    </div>
+    <div class="item item4" data-aos="fade-left" data-aos-duration="1000">
+      <img src="assets/images/image3.png" alt="Zdjęcie inwestycji Grabówki" />
+    </div>
+  </div>
+  <div class="row">
+    <div class="item item1" data-aos="fade-right" data-aos-duration="1000">
+      <img src="assets/images/image2.png" alt="Zdjęcie inwestycji Grabówki" />
+    </div>
+    <div class="item item2" data-aos="fade-left" data-aos-duration="1000">
+      <div class="text-container">
+        <h2>Idealne miejsce dla Ciebie</h2>
+        <p>
+          Okolica to prawdziwa oaza spokoju – pełna zieleni i świeżego
+          powietrza.
+        </p>
+        <p>
+          To idealne miejsce, aby na chwilę zwolnić tempo i cieszyć się
+          codziennymi chwilami w otoczeniu natury.
+        </p>
+        <p>
+          Malownicze tereny zachęcają zarówno do relaksu, jak i aktywnego trybu
+          życia, tworząc przestrzeń, w której każdy znajdzie coś dla siebie.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

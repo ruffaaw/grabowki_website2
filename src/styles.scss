@@ -1,0 +1,102 @@
+$primary-color: #373d20;
+$secondary-color: #766153;
+
+@import "aos/dist/aos.css";
+@import "@fortawesome/fontawesome-free/css/all.css";
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap");
+
+body[data-aos-duration="5000"] [data-aos],
+[data-aos][data-aos][data-aos-duration="5000"] {
+  transition-duration: 5000ms;
+}
+
+body {
+  background-color: #eff1ed;
+  overflow-x: hidden;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  font-family: "Manrope", sans-serif;
+
+  .title {
+    font-weight: lighter;
+    font-size: 4rem;
+    margin: 30px;
+    color: $primary-color;
+    position: relative;
+    display: inline-block;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      width: 550px;
+      height: 5px;
+      background-color: $primary-color;
+      transform: translateY(-50%);
+    }
+
+    &::before {
+      right: 120%;
+    }
+
+    &::after {
+      left: 120%;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .title {
+      font-size: 2rem;
+      margin: 20px;
+
+      &::before {
+        right: 110%;
+      }
+
+      &::after {
+        left: 110%;
+      }
+    }
+  }
+}
+
+// slick carousel
+
+.slick-dots {
+  position: absolute;
+  bottom: 2% !important;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+
+  li {
+    margin: 0 5px;
+  }
+
+  button {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: white !important;
+    opacity: 0.3;
+    filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.5));
+
+    &:before {
+      display: none;
+    }
+  }
+
+  .slick-active button {
+    background-color: black;
+    opacity: 1;
+  }
+}

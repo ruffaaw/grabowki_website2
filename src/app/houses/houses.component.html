@@ -1,0 +1,188 @@
+<div class="main-container">
+  <h2 class="title">Szczegóły domów</h2>
+  <div class="choose-container">
+    <div class="choose-image-container">
+      <ng-container *ngFor="let house of houses; let i = index">
+        <button
+          [ngClass]="{
+            available: house.status === 1,
+            unavailable: house.status === 0,
+            reserved: house.status === 2
+          }"
+          class="house-choose-button"
+          id="house{{ house.id }}"
+          (click)="selectHouse(house, i)"
+        >
+          <p>{{ house.id }}</p>
+        </button>
+      </ng-container>
+
+      <!-- reszta przyciskow -->
+      <img src="assets/images/dron1112.png" alt="" />
+      <!-- <div class="house-details" *ngIf="selectedHouse">
+        <div class="house-name">
+          <div class="house-header">
+            <div class="house-title">
+              <h2>
+                Dom numer <strong>{{ selectedHouse.id }}</strong>
+              </h2>
+              <p
+                [ngClass]="{
+                  'house-available': selectedHouse.status === 1,
+                  'house-unavailable': selectedHouse.status === 0,
+                  'house-reserved': selectedHouse.status === 2
+                }"
+              >
+                {{
+                  selectedHouse.status === 1
+                    ? "Dostępny"
+                    : selectedHouse.status === 2
+                    ? "Zarezerwowany"
+                    : "Sprzedany"
+                }}
+              </p>
+            </div>
+          </div>
+        </div>
+        <hr />
+        <div class="house-description">
+          <p class="house-column">
+            <i class="fa-solid fa-house"></i> Metraż:
+            <strong>{{ selectedHouse.metraz }} m²</strong><br />
+            <span class="house-column" *ngIf="selectedHouse.ogrodek">
+              <i class="fa-solid fa-door-open"></i> Ogródek:
+              <strong>{{ selectedHouse.ogrodek }} m²</strong> </span
+            ><br />
+          </p>
+
+          <p class="house-column">
+            <i class="fa-solid fa-people-roof"></i> Pokoje:
+            <strong>{{ selectedHouse.pokoje }}</strong
+            ><br />
+            <ng-container>
+              <i class="fa-solid fa-tags"></i> Cena:
+              <strong>{{ selectedHouse.cena }} zł</strong>
+
+              <span
+                class="price-history-tooltip"
+                (click)="toggleTooltip(selectedHouse)"
+              >
+                <i class="fa-solid fa-circle-info"></i>
+                <div
+                  class="tooltip-content"
+                  [class.show]="selectedHouse.showTooltip"
+                  [class.hide]="!selectedHouse.showTooltip"
+                >
+                  Najniższa cena z ostatnich 30 dni:
+                  <p>
+                    <strong>{{ selectedHouse.cena30 }} zł</strong>
+                  </p>
+                </div>
+              </span>
+            </ng-container>
+          </p>
+        </div>
+        <hr />
+        <div class="download-button-container">
+          <button class="action-button" (click)="downloadPDF(selectedHouse.id)">
+            <i class="fa-solid fa-download"></i>
+            <p>Szczegóły</p>
+          </button>
+        </div>
+      </div> -->
+    </div>
+    <div class="table-container" #tableContainer>
+      <ng-container class="table" *ngFor="let house of houses; let i = index">
+        <div
+          class="house-details"
+          [ngClass]="{ 'alternate-background': i % 2 === 0 }"
+          [attr.id]="'house-' + i"
+        >
+          <div class="house-name">
+            <div class="house-header">
+              <div class="house-title">
+                <h2>
+                  Dom numer <strong>{{ house.id }}</strong>
+                </h2>
+                <p
+                  [ngClass]="{
+                    'house-available': house.status === 1,
+                    'house-unavailable': house.status === 0,
+                    'house-reserved': house.status === 2
+                  }"
+                >
+                  {{
+                    house.status === 1
+                      ? "Dostępny"
+                      : house.status === 2
+                      ? "Zarezerwowany"
+                      : "Sprzedany"
+                  }}
+                </p>
+              </div>
+              <button
+                class="action-button"
+                ngClass="house-{{ i }}"
+                (click)="downloadPDF(house.id)"
+              >
+                <i class="fa-solid fa-download"></i>
+                <p>Szczegóły</p>
+              </button>
+            </div>
+          </div>
+          <hr ngClass="house-{{ i }}" />
+          <div class="house-description" ngClass="house-{{ i }}">
+            <p class="house-column">
+              <i class="fa-solid fa-house"></i> Metraż:
+              <strong>{{ house.metraz }} m²</strong><br />
+              <i class="fa-solid fa-people-roof"></i> Pokoje:
+              <strong>{{ house.pokoje }}</strong
+              ><br />
+              <!-- <i *ngIf="selectedHouse" class="fa-solid fa-tags"></i> Cena za
+              metr:
+              <strong>
+                {{ getCenaPerM2(selectedHouse) | number : "1.2-2" }}
+                zł/m²
+              </strong> -->
+            </p>
+
+            <p class="house-column">
+              <ng-container>
+                <i class="fa-solid fa-tags"></i> Cena:
+                <strong>{{ house.cena }} zł</strong>
+
+                <span
+                  class="price-history-tooltip"
+                  (click)="toggleTooltip(house)"
+                >
+                  <i class="fa-solid fa-circle-info"></i>
+                  <div
+                    class="tooltip-content"
+                    [class.show]="house.showTooltip"
+                    [class.hide]="!house.showTooltip"
+                  >
+                    Najniższa cena z ostatnich 30 dni:
+                    <p>
+                      <strong>{{ house.cena30 }} zł</strong>
+                    </p>
+                  </div>
+                </span>
+              </ng-container>
+              <br />
+              <i class="fa-solid fa-door-open"></i> Poziom:
+              <strong>
+                {{ house.id.endsWith("a") ? "Parter" : "Piętro" }}</strong
+              >
+            </p>
+
+            <p class="house-column" *ngIf="house.ogrodek">
+              <i class="fa-solid fa-door-open"></i> Ogródek:
+              <strong>{{ house.ogrodek }} m²</strong>
+            </p>
+          </div>
+          <hr ngClass="house-{{ i }}" />
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</div>
