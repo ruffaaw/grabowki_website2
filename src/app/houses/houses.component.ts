@@ -68,8 +68,8 @@ export class HousesComponent implements OnInit {
 
   downloadPDF(houseNumber: string) {
     const link = document.createElement('a');
-    link.href = 'assets/jpgs/' + houseNumber + '_page1.jpg';
-    link.download = 'sadowa20_' + houseNumber + '_rzut.jpg';
+    link.href = 'assets/jpgs/' + houseNumber + '.jpg';
+    link.download = houseNumber + '.jpg';
     link.click();
   }
 
