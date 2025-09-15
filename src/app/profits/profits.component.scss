@@ -6,7 +6,7 @@
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  height: 160vh;
+  height: 100%;
   margin-top: 30px;
 
   .left-side {
@@ -39,6 +39,7 @@
     overflow: hidden;
     width: 60%;
     height: 100%;
+    aspect-ratio: 4 / 3;
     filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5));
 
     img {
@@ -79,7 +80,7 @@
       i {
         font-size: 3rem;
         width: 10%;
-        color: #766153;
+        color: #8dab7f;
       }
 
       .tile-content {
@@ -93,7 +94,7 @@
           font-size: 1.7rem;
           text-align: left;
           margin-top: 0;
-          color: #766153;
+          color: #1e2019;
           width: 90%;
         }
 
@@ -117,8 +118,6 @@
 
 @media (max-width: 1024px) {
   .main-container {
-    height: 320vh !important;
-
     .left-side,
     .right-side {
       flex-direction: column !important;

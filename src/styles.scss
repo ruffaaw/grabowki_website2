@@ -2,8 +2,8 @@
 @import "aos/dist/aos.css";
 @import "@fortawesome/fontawesome-free/css/all.css";
 
-$primary-color: #373d20;
-$secondary-color: #766153;
+$primary-color: #1e2019;
+$secondary-color: #8dab7f;
 
 body[data-aos-duration="5000"] [data-aos],
 [data-aos][data-aos][data-aos-duration="5000"] {
@@ -11,7 +11,7 @@ body[data-aos-duration="5000"] [data-aos],
 }
 
 body {
-  background-color: #eff1ed;
+  background-color: white;
   overflow-x: hidden;
 }
 

@@ -374,11 +374,11 @@
         }
 
         .action-button {
-          background-color: #fff;
+          background-color: #8dab7f;
           border: 0 solid #e2e8f0;
           border-radius: 1.5rem;
           box-sizing: border-box;
-          color: #0d172a;
+          color: #1e2019;
           cursor: pointer;
           display: inline-block;
           font-size: 1.1rem;
@@ -396,11 +396,18 @@
           touch-action: manipulation;
           z-index: 1;
 
+          p {
+            color: #1e2019;
+          }
+
           &:hover {
-            background-color: #333;
-            color: #fff;
+            background-color: #1e2019;
+            color: #8dab7f;
             transform: scale(1.05);
             box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.2);
+            p {
+              color: #8dab7f;
+            }
           }
         }
       }
