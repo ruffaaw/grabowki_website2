@@ -138,12 +138,11 @@
               <i class="fa-solid fa-people-roof"></i> Pokoje:
               <strong>{{ house.pokoje }}</strong
               ><br />
-              <!-- <i *ngIf="selectedHouse" class="fa-solid fa-tags"></i> Cena za
-              metr:
+              <i class="fa-solid fa-tags"></i> Cena za metr:
               <strong>
-                {{ getCenaPerM2(selectedHouse) | number : "1.2-2" }}
+                {{ house.cena / house.metraz | number : "1.2-2" }}
                 zł/m²
-              </strong> -->
+              </strong>
             </p>
 
             <p class="house-column">

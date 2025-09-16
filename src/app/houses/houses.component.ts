@@ -84,14 +84,4 @@ export class HousesComponent implements OnInit {
   getIEtapHouses(): Mieszkanie[] {
     return this.houses;
   }
-
-  // getCenaPerM2(house: Mieszkanie): number {
-  //   // zamień "599 999 zł" -> 599999
-  //   const cena = Number(house.cena.replace(/\s|zł/g, ''));
-
-  //   // zamień "60,01 m²" -> 60.01
-  //   const metraz = Number(house.metraz.replace(',', '.').replace(/\s|m²/g, ''));
-
-  //   return cena / metraz;
-  // }
 }
