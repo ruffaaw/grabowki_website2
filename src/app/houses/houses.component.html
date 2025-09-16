@@ -178,6 +178,10 @@
               <i class="fa-solid fa-door-open"></i> Ogródek:
               <strong>{{ house.ogrodek }} m²</strong>
             </p>
+            <p class="house-column" *ngIf="house.taras">
+              <i class="fa-solid fa-door-open"></i> Taras:
+              <strong>{{ house.taras }} m²</strong>
+            </p>
           </div>
           <hr ngClass="house-{{ i }}" />
         </div>
