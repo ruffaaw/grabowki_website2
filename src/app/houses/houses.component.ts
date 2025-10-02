@@ -1,6 +1,7 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { mieszkania, Mieszkanie } from './apartmentsData';
+import { Mieszkanie } from './apartmentsData';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-houses',
@@ -12,8 +13,9 @@ import { mieszkania, Mieszkanie } from './apartmentsData';
 export class HousesComponent implements OnInit {
   @ViewChild('modal') modal!: ElementRef;
 
-  houses: Mieszkanie[] = [];
-  selectedHouse: Mieszkanie | null = null;
+  constructor(private http: HttpClient) {}
+  houses: any[] = [];
+  selectedHouse: any = null;
   selectedFloor: boolean = true;
 
   ngOnInit() {
@@ -22,29 +24,29 @@ export class HousesComponent implements OnInit {
   }
 
   getData() {
-    // przypisanie danych lokalnych i sortowanie
-    this.houses = mieszkania
-      .filter((m) => {
-        // filtrujemy mieszkania z id mniejszym niż 5
-        const num = parseInt(m.id, 10);
-        return num < 5;
-      })
-      .sort((a, b) => {
-        // sortujemy najpierw po numerze (cyfry w id)
-        const numA = parseInt(a.id, 10);
-        const numB = parseInt(b.id, 10);
-        if (numA !== numB) return numA - numB;
+    const url =
+      'https://oku1rgj6kg.execute-api.eu-central-1.amazonaws.com/prod/get-items';
+    this.http.get<{ body: any[] }>(url).subscribe(
+      (response) => {
+        this.houses = response.body.sort((a, b) => {
+          const numA = parseInt(a.id, 10);
+          const numB = parseInt(b.id, 10);
 
-        // jeśli numery są takie same, sortujemy po literze
-        const letterA = a.id.replace(/^\d+/, '');
-        const letterB = b.id.replace(/^\d+/, '');
-        return letterA.localeCompare(letterB);
-      });
+          if (numA !== numB) {
+            return numA - numB;
+          }
 
-    // wybieramy pierwsze mieszkanie
-    if (this.houses.length > 0) {
-      this.selectHouse(this.houses[0], 0);
-    }
+          const letterA = a.id.replace(/^\d+/, '');
+          const letterB = b.id.replace(/^\d+/, '');
+
+          return letterA.localeCompare(letterB);
+        });
+        this.selectHouse(this.houses[0], 0);
+      },
+      (error) => {
+        console.error('Error in fetching houses from DynamoDB!', error);
+      }
+    );
   }
 
   toggleTooltip(house: Mieszkanie) {

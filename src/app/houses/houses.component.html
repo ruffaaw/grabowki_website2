@@ -5,9 +5,9 @@
       <ng-container *ngFor="let house of houses; let i = index">
         <button
           [ngClass]="{
-            available: house.status === 1,
-            unavailable: house.status === 0,
-            reserved: house.status === 2
+            available: house.dostepnosc === 1,
+            unavailable: house.dostepnosc === 0,
+            reserved: house.dostepnosc === 2
           }"
           class="house-choose-button"
           id="house{{ house.id }}"
@@ -106,15 +106,15 @@
                 </h2>
                 <p
                   [ngClass]="{
-                    'house-available': house.status === 1,
-                    'house-unavailable': house.status === 0,
-                    'house-reserved': house.status === 2
+                    'house-available': house.dostepnosc === 1,
+                    'house-unavailable': house.dostepnosc === 0,
+                    'house-reserved': house.dostepnosc === 2
                   }"
                 >
                   {{
-                    house.status === 1
+                    house.dostepnosc === 1
                       ? "Dostępny"
-                      : house.status === 2
+                      : house.dostepnosc === 2
                       ? "Zarezerwowany"
                       : "Sprzedany"
                   }}
