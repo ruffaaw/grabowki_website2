@@ -23,17 +23,23 @@ export class HousesComponent implements OnInit {
 
   getData() {
     // przypisanie danych lokalnych i sortowanie
-    this.houses = mieszkania.sort((a, b) => {
-      // sortujemy najpierw po numerze (cyfry w id)
-      const numA = parseInt(a.id, 10);
-      const numB = parseInt(b.id, 10);
-      if (numA !== numB) return numA - numB;
+    this.houses = mieszkania
+      .filter((m) => {
+        // filtrujemy mieszkania z id mniejszym niż 5
+        const num = parseInt(m.id, 10);
+        return num < 5;
+      })
+      .sort((a, b) => {
+        // sortujemy najpierw po numerze (cyfry w id)
+        const numA = parseInt(a.id, 10);
+        const numB = parseInt(b.id, 10);
+        if (numA !== numB) return numA - numB;
 
-      // jeśli numery są takie same, sortujemy po literze
-      const letterA = a.id.replace(/^\d+/, '');
-      const letterB = b.id.replace(/^\d+/, '');
-      return letterA.localeCompare(letterB);
-    });
+        // jeśli numery są takie same, sortujemy po literze
+        const letterA = a.id.replace(/^\d+/, '');
+        const letterB = b.id.replace(/^\d+/, '');
+        return letterA.localeCompare(letterB);
+      });
 
     // wybieramy pierwsze mieszkanie
     if (this.houses.length > 0) {
