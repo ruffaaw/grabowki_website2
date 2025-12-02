@@ -24,9 +24,9 @@
       .house-details {
         position: absolute;
         right: 20px;
-        bottom: 20px;
-        height: auto;
-        width: 35%;
+        top: 20px;
+        height: 60%;
+        width: 40%;
         background-color: white;
         box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
         border-radius: 3px;
@@ -101,7 +101,7 @@
           text-align: center;
           position: relative;
           margin-top: 15px;
-          height: 60%;
+          height: 50%;
           width: auto;
           display: flex;
           justify-content: center;
@@ -461,18 +461,19 @@
 
 @media (max-width: 1750px) {
   .house-image {
-    height: 50% !important;
+    margin-top: 0px !important;
+    height: 45% !important;
   }
 }
 
 @media (max-width: 1620px) {
   .house-image {
-    height: 45% !important;
+    height: 40% !important;
   }
 }
 @media (max-width: 1500px) {
   .house-image {
-    height: 40% !important;
+    height: 50% !important;
   }
 }
 
