@@ -186,7 +186,9 @@
         z-index: 2;
         opacity: 0.75;
         transform: scale(1);
-        transition: opacity 0.25s ease, transform 0.25s ease;
+        transition:
+          opacity 0.25s ease,
+          transform 0.25s ease;
 
         p {
           color: white;
@@ -214,7 +216,7 @@
       }
 
       #house1a {
-        bottom: 22%;
+        bottom: 23.5%;
         left: 37%;
       }
 
@@ -239,8 +241,8 @@
       }
 
       #house3b {
-        bottom: 38%;
-        left: 35.5%;
+        bottom: 38.5%;
+        left: 36%;
       }
 
       #house4a {
@@ -249,8 +251,8 @@
       }
 
       #house4b {
-        bottom: 41%;
-        left: 33%;
+        bottom: 41.5%;
+        left: 34%;
       }
 
       #house5a {
