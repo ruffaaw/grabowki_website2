@@ -34,7 +34,9 @@
       height: 80px;
       cursor: pointer;
       z-index: 10000;
-      transition: background 0.2s ease, transform 0.2s ease;
+      transition:
+        background 0.2s ease,
+        transform 0.2s ease;
       transform: scale(1);
 
       &.custom-prev {

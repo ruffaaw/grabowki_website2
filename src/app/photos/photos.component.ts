@@ -11,11 +11,11 @@ import { SlickCarouselModule } from 'ngx-slick-carousel';
 })
 export class PhotosComponent {
   images = [
-    'assets/images/background_image.png',
-    'assets/images/Grabówki1 zachód.png',
-    'assets/images/image2.png',
-    'assets/images/image3.png',
-    'assets/images/image4.png',
+    'assets/images/background_image.webp',
+    'assets/images/Grabówki1 zachód.webp',
+    'assets/images/image2.webp',
+    'assets/images/image3.webp',
+    'assets/images/image4.webp',
     // 'assets/images/dron111.png',
   ];
 
