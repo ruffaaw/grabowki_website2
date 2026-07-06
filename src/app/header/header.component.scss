@@ -34,7 +34,7 @@ header {
   }
 
   .logo {
-    width: 80px;
+    width: 180px;
     filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.5));
     cursor: pointer;
     transform: scale(1);
@@ -59,7 +59,9 @@ header {
       text-shadow: 2px 2px 8px #000;
       margin-left: 40px;
       transform: scale(1);
-      transition: color 0.2s ease, transform 0.1s ease;
+      transition:
+        color 0.2s ease,
+        transform 0.1s ease;
 
       &:hover {
         color: #aaa;
@@ -103,7 +105,9 @@ header {
       align-items: center;
       background: $primary-color;
       width: 100vw;
-      transition: transform 0.3s ease, opacity 0.25s ease;
+      transition:
+        transform 0.3s ease,
+        opacity 0.25s ease;
       margin: 0;
       opacity: 0 !important;
       box-shadow: 0px 5px 10px rgba($color: #000000, $alpha: 0.5);
